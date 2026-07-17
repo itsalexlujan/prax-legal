@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prax — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --fg: #26241f;
+    --muted: #6b675f;
+    --rule: #e6e2da;
+    --accent: #208aef;
+    --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #171614;
+      --fg: #e9e6df;
+      --muted: #9a958b;
+      --rule: #2c2a26;
+      --accent: #4ea3ff;
+      --card: #1e1d1a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 0 20px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 64px 0 96px; }
+  header { border-bottom: 1px solid var(--rule); padding-bottom: 28px; margin-bottom: 8px; }
+  h1 { font-size: 2rem; font-weight: 650; letter-spacing: -0.02em; margin: 0 0 6px; }
+  .updated { color: var(--muted); font-size: 0.95rem; margin: 0; }
+  .lede {
+    margin: 28px 0 8px;
+    padding: 18px 20px;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    color: var(--fg);
+  }
+  .lede strong { font-weight: 650; }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 640;
+    letter-spacing: -0.01em;
+    margin: 40px 0 10px;
+    padding-top: 4px;
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 16px; padding-left: 1.25em; }
+  li { margin: 0 0 8px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; }
+  .muted { color: var(--muted); }
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Prax — Privacy Policy</h1>
+    <p class="updated">Last updated: July 17, 2026</p>
+  </header>
+
+  <p class="lede">
+    Prax is built on a simple idea: your practice is yours. <strong>The short version:</strong>
+    you can use Prax with no account at all — and if you do, your training data never leaves
+    your phone. The only time Prax sends anything to a server is when you <em>choose</em> to use
+    a connected feature: the <strong>Circle</strong> (the optional social layer, which needs an
+    account), <strong>importing a routine</strong>, or <strong>connecting Spotify</strong>. Each
+    is explained below.
+  </p>
+
+  <h2>1. Using Prax without an account</h2>
+  <p>
+    Prax works fully without signing in. In this mode, everything you record — your practices,
+    movements, sets, weights, reflections, routines, and settings — is stored <strong>only on
+    your device</strong>. It is never sent to us or anyone else. There is no account, no server
+    call, and nothing for us to see.
+  </p>
+
+  <h2>2. Photos and camera</h2>
+  <p>
+    If you add a photo to your profile or to a share card, Prax uses your camera or photo library
+    <strong>only to create that image on your device</strong>. Profile photos and share images
+    stay on your device and are <strong>not uploaded</strong> to us or any third party. Access is
+    requested only when you use the feature, and you can decline it in your device settings.
+  </p>
+
+  <h2>3. The Circle (optional — requires an account)</h2>
+  <p>
+    If you choose to use the Circle, Prax's social layer, you create an account and a limited
+    amount of data is stored on our backend (hosted by <strong>Supabase</strong>) so your
+    connections can see it. This includes:
+  </p>
+  <ul>
+    <li><strong>Account identity:</strong> when you sign in with <strong>Apple</strong>, we receive
+      your name and email from Apple. (You can use Apple's "Hide My Email" to share a relay address
+      instead.) If you sign in by email, we receive that email address.</li>
+    <li><strong>Profile:</strong> the display name, bio, and any Instagram/X handles you enter,
+      plus your initials.</li>
+    <li><strong>Your "witnessing surface":</strong> the limited activity your connections are meant
+      to see — your active days, current and longest continuance (streak), whether you're training
+      right now, your most recent practice's title, and (if you attach one) your most recent song.</li>
+    <li><strong>Connections and invites:</strong> who you are connected to, and the invite codes you
+      create.</li>
+  </ul>
+  <p>
+    Only <strong>you and people you are mutually connected to</strong> can read this data. This is
+    enforced at the database level (row-level security), not just in the app. Your private Archive —
+    the actual movements, sets, weights, and reflections — <strong>stays on your device and is never
+    synced</strong>, even when you use the Circle.
+  </p>
+
+  <h2>4. Importing a routine</h2>
+  <p>
+    When you use "bring in a routine," the text, image, or PDF you provide is sent to our import
+    service (a <strong>Cloudflare Worker</strong>), which passes it to <strong>OpenRouter</strong>
+    and <strong>Anthropic (Claude)</strong> to read it into a structured routine. This is used only
+    to parse that one routine and return it to you. The import service does not store your submission
+    after processing it. If you'd rather not send content off-device, the app also has an on-device
+    fallback that parses plain text locally.
+  </p>
+
+  <h2>5. Spotify (optional)</h2>
+  <p>
+    If you connect Spotify, Prax reads what you're <strong>currently playing</strong> (song title,
+    artist, and album art) so you can attach it to a shared practice. Your Spotify login tokens are
+    stored <strong>encrypted on your device</strong> and are never sent to us. If you attach a song,
+    that song's title/artist/art becomes part of your witnessing surface and is visible to your
+    connections. You can disconnect Spotify at any time.
+  </p>
+
+  <h2>6. Analytics, tracking, and advertising</h2>
+  <p>
+    Prax contains <strong>no advertising and no third-party ad tracking</strong>. We do not build an
+    advertising profile of you and do not sell your data. The app may check our update service
+    (<strong>Expo</strong>) for app updates, which involves a standard network request.
+  </p>
+
+  <h2>7. Third-party services we rely on</h2>
+  <p>To provide the connected features above, Prax uses these services as processors:</p>
+  <ul>
+    <li><strong>Apple</strong> — Sign in with Apple (account identity)</li>
+    <li><strong>Supabase</strong> — hosts the Circle database and authentication</li>
+    <li><strong>Cloudflare</strong> — runs the routine-import service</li>
+    <li><strong>OpenRouter / Anthropic</strong> — read an imported routine into structured data</li>
+    <li><strong>Spotify</strong> — provides your currently-playing track (only if you connect it)</li>
+    <li><strong>Expo</strong> — delivers app updates</li>
+  </ul>
+  <p>Each processes only the data described in its section above.</p>
+
+  <h2>8. Children</h2>
+  <p>
+    Prax is not directed to children under 13, and we do not knowingly collect information from them.
+  </p>
+
+  <h2>9. Deleting your data</h2>
+  <ul>
+    <li><strong>On-device data</strong> (your Archive, reflections, photos, settings): delete the app
+      and it is gone. There is no copy anywhere else.</li>
+    <li><strong>Circle account data:</strong> you can delete your account and everything associated
+      with it (profile, witnessing surface, connections, invites). To request deletion, email us at
+      the address below, or use the in-app account-deletion option where available. Deleting your
+      account removes your data from our backend.</li>
+  </ul>
+
+  <h2>10. Where your data is stored and for how long</h2>
+  <p>
+    Circle data is stored on Supabase's infrastructure and kept while your account is active. When you
+    delete your account, the associated rows are removed. On-device data lives only on your device for
+    as long as the app is installed.
+  </p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>
+    If a future version of Prax handles data differently, we'll update this policy and note the change
+    here before that change takes effect.
+  </p>
+
+  <h2>12. Your choices</h2>
+  <p>
+    You control what leaves your device: use Prax without an account to keep everything local, skip the
+    Circle, use the on-device import fallback, and connect or disconnect Spotify whenever you like.
+  </p>
+
+  <h2>13. Contact</h2>
+  <p>
+    Questions about this policy? Email <a href="mailto:roberto.lujan1998@gmail.com">roberto.lujan1998@gmail.com</a>.
+  </p>
+
+  <footer>
+    Prax · This policy describes how the app handles data. It is written in plain language and is not
+    a substitute for legal advice.
+  </footer>
+</div>
+</body>
+</html>
